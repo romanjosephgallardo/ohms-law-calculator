@@ -5,7 +5,7 @@
 4.	Handle cases where division by zero might occur.
 '''
 
-# pseudocode
+# Ohm's Law Calculator:
 
 # Ask the user what they want to calculate: Voltage, Current, or Resistance
 print("Ohm's Law Calculator: \n"
@@ -17,20 +17,33 @@ calc_choice = int(input("Enter your choice: "))
 
 # Based on their choice, prompt the user to input the appropriate values
 if calc_choice == 1:
-    voltage = float(input("Enter the voltage: "))
-    resistance = float(input("Enter the resistance: "))
-    current = voltage / resistance
-    print(f"The current is: {current:.3g}A")
+    try:
+        voltage = float(input("Enter the voltage: "))
+        resistance = float(input("Enter the resistance: "))
+        current = voltage / resistance
+        print(f"The current is: {current:.3g}A")
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+    except ValueError:
+        print("Error: Invalid input. Please enter a number.")
 elif calc_choice == 2:
-    current = float(input("Enter the current: "))
-    resistance = float(input("Enter the resistance: "))
-    voltage = current * resistance
-    print(f"The voltage is: {voltage:.3g}V")
+    try:
+        current = float(input("Enter the current: "))
+        resistance = float(input("Enter the resistance: "))
+        voltage = current * resistance
+        print(f"The voltage is: {voltage:.3g}V")
+    except ValueError:
+        print("Error: Invalid input. Please enter a number.")
 elif calc_choice == 3:
-    voltage = float(input("Enter the voltage: "))
-    current = float(input("Enter the current: "))
-    resistance = voltage / current
-    print(f"The resistance is: {resistance:.3g}Ω")
+    try:
+        voltage = float(input("Enter the voltage: "))
+        current = float(input("Enter the current: "))
+        resistance = voltage / current
+        print(f"The resistance is: {resistance:.3g}Ω")
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+    except ValueError:
+        print("Error: Invalid input. Please enter a number.")
 else:
     print("Invalid input, please enter a number from 1-3.")
 
