@@ -1,10 +1,3 @@
-''' Instructions:
-1.	Ask the user what they want to calculate: Voltage, Current, or Resistance.
-2.	Based on their choice, prompt the user to input the appropriate values.
-3.	Use Ohm's Law to calculate the missing variable and display the result.
-4.	Handle cases where division by zero might occur.
-'''
-
 # Ohm's Law Calculator:
 
 # Ask the user what they want to calculate: Voltage, Current, or Resistance
@@ -38,6 +31,7 @@ elif calc_choice == 2:
         print(f"The voltage is: {voltage:.3g}V")
     except ValueError:
         print("Error: Invalid input. Please enter a number.")
+        
 elif calc_choice == 3:
     try:
         voltage = float(input("Enter the voltage: "))
@@ -50,6 +44,3 @@ elif calc_choice == 3:
         print("Error: Invalid input. Please enter a number.")
 else:
     print("Invalid input, please enter a number from 1-3.")
-
-# Use Ohm's Law to calculate the missing variable and display the result
-# Handle cases where division by zero might occur
