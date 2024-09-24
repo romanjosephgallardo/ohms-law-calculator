@@ -13,7 +13,10 @@ print("Ohm's Law Calculator: \n"
       "1. Voltage \n"
       "2. Current \n"
       "3. Resistance")
-calc_choice = int(input("Enter your choice: "))
+try:
+    calc_choice = int(input("Enter your choice: "))
+except ValueError:
+    print("Error: Invalid input. Please enter a number.")
 
 # Based on their choice, prompt the user to input the appropriate values
 if calc_choice == 1:
@@ -26,6 +29,7 @@ if calc_choice == 1:
         print("Error: Cannot divide by zero.")
     except ValueError:
         print("Error: Invalid input. Please enter a number.")
+    
 elif calc_choice == 2:
     try:
         current = float(input("Enter the current: "))
