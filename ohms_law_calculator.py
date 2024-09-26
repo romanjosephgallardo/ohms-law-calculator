@@ -15,6 +15,16 @@ except ValueError:
 if calc_choice == 1:
     # Voltage = Current * Resistance
     try:
+        current = float(input("Enter the current: "))
+        resistance = float(input("Enter the resistance: "))
+        voltage = current * resistance
+        print(f"The voltage is: {voltage:.3g}V")
+    except ValueError:
+        print("Error: Invalid input. Please enter a number.")
+    
+elif calc_choice == 2:
+    # Current = Voltage / Resistance
+    try:
         voltage = float(input("Enter the voltage: "))
         resistance = float(input("Enter the resistance: "))
         current = voltage / resistance
@@ -24,15 +34,6 @@ if calc_choice == 1:
     except ValueError:
         print("Error: Invalid input. Please enter a number.")
     
-elif calc_choice == 2:
-    # Current = Voltage / Resistance
-    try:
-        current = float(input("Enter the current: "))
-        resistance = float(input("Enter the resistance: "))
-        voltage = current * resistance
-        print(f"The voltage is: {voltage:.3g}V")
-    except ValueError:
-        print("Error: Invalid input. Please enter a number.")
         
 elif calc_choice == 3:
     # Resistance = Voltage / Current
